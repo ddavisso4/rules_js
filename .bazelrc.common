@@ -74,3 +74,7 @@ build:release --stamp --workspace_status_command=$(pwd)/workspace_status.sh
 # Config to enable building and testing with bzlmod
 common:bzlmod --enable_bzlmod
 common:bzlmod --@aspect_bazel_lib//lib:flag_bzlmod
+
+build --disk_cache=C:/bzl_cache
+build --execution_log_json_file ./exec_log.json
+build --action_env=BAZEL_SH=C:/msys64/usr/bin/bash.exe

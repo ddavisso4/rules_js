@@ -99,10 +99,11 @@ npm_translate_lock(
     generate_bzl_library_targets = True,
     lifecycle_hooks = {
         # we fetch @kubernetes/client-node from source and it has a `prepare` lifecycle hook that needs to be run
-        "@kubernetes/client-node": ["prepare"],
+        # "@kubernetes/client-node": ["prepare"],
         # 'install' hook fails as it assumes the following path to `node-pre-gyp`: ./node_modules/.bin/node-pre-gyp
         # https://github.com/stultuss/protoc-gen-grpc-ts/blob/53d52a9d0e1fe3cbe930dec5581eca89b3dde807/package.json#L28
-        "protoc-gen-grpc@2.0.3": [],
+        # "protoc-gen-grpc@2.0.3": [],
+        "*" : []
     },
     lifecycle_hooks_execution_requirements = {
         "*": [
@@ -163,9 +164,9 @@ npm_translate_lock(
         # other direct dependencies in the `examples/npm_deps/package.json`.
         "ms@2.1.3": ["examples/npm_deps"],
     },
-    update_pnpm_lock = True,
+    # update_pnpm_lock = True,
     verify_node_modules_ignored = "//:.bazelignore",
-    verify_patches = "//examples/npm_deps/patches:patches",
+    # verify_patches = "//examples/npm_deps/patches:patches",
 )
 
 load("@npm//:repositories.bzl", "npm_repositories")

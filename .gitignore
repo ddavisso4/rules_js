@@ -3,3 +3,6 @@ node_modules/
 .pnpm-*
 .DS_Store
 .bazelrc.user
+
+/bazel-*
+exec_log.json
